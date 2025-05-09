@@ -8,10 +8,11 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup MSVC build tools
+      - name: Setup MSVC Build Tools
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: Configure with CMake
@@ -20,9 +21,10 @@ jobs:
       - name: Build with CMake
         run: cmake --build build --config Release
 
-      - name: Upload release artifact
+      - name: Upload Executable to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: build/Release/*.exe
+          tag_name: ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
