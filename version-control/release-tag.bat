@@ -1,7 +1,10 @@
 @echo off
 cd /d %~dp0\..
 
-set /p TAG=Enter version tag (e.g. v0.2): 
+REM Read version from version.txt
+set /p TAG=<version.txt
+
+REM Ask for message
 set /p MSG=Enter tag message (optional): 
 
 git tag -a %TAG% -m "%MSG%"
