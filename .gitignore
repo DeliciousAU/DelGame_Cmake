@@ -1,0 +1,7 @@
+build/
+*.obj
+*.exe
+*.sln
+*.vcxproj*
+version-control/.env
+
