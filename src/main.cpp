@@ -1,15 +1,14 @@
 #include "raylib.h"
 
 int main() {
-    InitWindow(800, 450, "DelGame_Cmake");
-    SetTargetFPS(60);
-    while (WindowShouldClose() == false) {
+    // basic Raylib test
+    InitWindow(800, 600, "DelGame_Cmake Test");
+    while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(RAYWHITE);
-        DrawText("CMake build running", 10, 10, 20, DARKGRAY);
+        DrawText("Hello from DelGame_Cmake!", 190, 200, 20, LIGHTGRAY);
         EndDrawing();
     }
-
     CloseWindow();
     return 0;
 }
